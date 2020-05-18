@@ -50,10 +50,10 @@
 						<a class="btn btn-dark" href="http://localhost/proy_01/index.php" role="button">Usuarios</a>
 					</li>
 					<li class="nav-item">
-						<a class="btn btn-dark" href="http://localhost/proy_01/inventarioR.php" role="button">Materiales</a>
+						<a class="btn btn-dark" href="http://localhost/proy_01/inventarioR.php" role="button">Reactivos</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#Reactivos">Reactivos</a>
+						<a class="nav-link js-scroll-trigger" href="#Materiales">Materiales</a>
 					</li>
 				</ul>
 			</div>

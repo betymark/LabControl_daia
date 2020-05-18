@@ -51,10 +51,10 @@
             <a class="nav-link js-scroll-trigger" href="http://localhost/proy_01/index.php">Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="http://localhost/proy_01/inventarioR.php">Materiales</a>
+						<a class="nav-link js-scroll-trigger" href="http://localhost/proy_01/inventarioR.php">Reactivos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#Reactivos">Reactivos</a>
+						<a class="nav-link js-scroll-trigger" href="#Materiales">Materiales</a>
           </li>
         </ul>
       </div>
