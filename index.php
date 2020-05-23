@@ -54,7 +54,7 @@
 						<a class="nav-link js-scroll-trigger" href="http://localhost/proy_01/inventarioR.php">Reactivos</a>
           </li>
           <li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#Materiales">Materiales</a>
+						<a class="nav-link js-scroll-trigger" href="http://localhost/proy_01/inventarioMat.php">Materiales</a>
           </li>
         </ul>
       </div>
@@ -93,7 +93,6 @@
 					<td><a href="delete.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
-
 		</table>
 	</div>
 </body>

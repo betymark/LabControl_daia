@@ -1,7 +1,7 @@
 <?php
 	include_once 'conexionR.php';
 
-	$sentencia_select=$con->prepare('SELECT *FROM inventario2 ORDER BY idproducto DESC');
+	$sentencia_select=$con->prepare('SELECT *FROM inventario_material ORDER BY id_material DESC');
 	$sentencia_select->execute();
 	$resultado=$sentencia_select->fetchAll();
 
@@ -9,7 +9,7 @@
 	if(isset($_POST['btn_buscar'])){
 		$buscar_text=$_POST['buscar'];
 		$select_buscar=$con->prepare('
-			SELECT *FROM inventario2 WHERE matricula LIKE :campo OR material LIKE :campo;'
+			SELECT *FROM inventario_material WHERE Matricula_Alumno LIKE :campo OR id_material LIKE :campo;'
 		);
 
 		$select_buscar->execute(array(
@@ -29,7 +29,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css"></li>
     <script src="https://kit.fontawesome.com/7022004208.js" crossorigin="anonymous"></script>
-	<title>control de inventario Prestamos de Material/Reactivos </title>
+	<title>Control de inventario Prestamos de Material </title>
 	<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
@@ -60,43 +60,38 @@
 		</div>
 	</nav>
 	</br>
-		<h2> SISTEMA DE INVENTARIO  DE MATERIAL/REACTIVOS</h2>
+		<h2> SISTEMA DE INVENTARIO  DE MATERIAL</h2>
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
-				<input type="text" name="buscar" placeholder="buscar matricula o material"
+				<input type="text" name="buscar" placeholder="buscar matrícula o material"
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="insertR.php" class="btn btn__nuevo">Nuevo</a>
+				<a href="insertMat.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
 			<tr class="head">
-				<td>Id</td>
-				<td>Matricula</td>
-				<td>email</td>
-				<td>Material/Reactivos</td>
+				<td>Id Material</td>
+                <td>Nombre del Material</td>
+                <td>Cantidad</td>
+				<td>Matrícula del Alumno</td>
+				<td>Trámite</td>
 				<td>Estado</td>
-				<td>Marca</td>
-				<td>Codigo del Material</td>
-				<td>Cantidad</td>
-				<td>Prestamo/Devolución</td>
-      	<td colspan="2">Acción</td>
+      <td colspan="2">Acción</td>
 			</tr>
 			<?php foreach($resultado as $fila):?>
 				<tr >
-					<td><?php echo $fila['idproducto']; ?></td>
-				  <td><?php echo $fila['matricula']; ?></td>
-				  <td><?php echo $fila ['email']; ?></td>
-					<td><?php echo $fila['material']; ?></td>
-					<td><?php echo $fila['estado']; ?></td>
-					<td><?php echo $fila['marca']; ?></td>
-					<td><?php echo $fila['codigo']; ?></td>
-					<td><?php echo $fila['cantidad']; ?></td>
-					<td><?php echo $fila['presdes']; ?></td>
+					<td><?php echo $fila['id_material']; ?></td>
+				  <td><?php echo $fila['Nombre_material']; ?></td>
+				  <td><?php echo $fila ['cantidad']; ?></td>
+					<td><?php echo $fila['Matricula_Alumno']; ?></td>
+					<td><?php echo $fila['Tramite']; ?></td>
+					<td><?php echo $fila['Estado']; ?></td>
 
 
-					<td><a href="updateR.php?idproducto=<?php echo $fila['idproducto']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="deleteR.php?idproducto=<?php echo $fila['idproducto']; ?>" class="btn__delete">Eliminar</a></td>
+
+					<td><a href="updateMat.php?id_material=<?php echo $fila['id_material']; ?>"  class="btn__update" >Editar</a></td>
+					<td><a href="deleteMat.php?id_material=<?php echo $fila['id_material']; ?>" class="btn__delete">Eliminar</a></td>
 				</tr>
 			<?php endforeach ?>
 
