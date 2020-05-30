@@ -53,7 +53,7 @@
 						<a class="btn btn-dark" href="http://localhost/proy_01/inventarioR.php" role="button">Reactivos</a>
 					</li>
 					<li class="nav-item">
-						<a class="btn btn-dark" href="http://localhost/proy_01/inventarioR.php">Materiales</a>
+						<a class="btn btn-dark" href="http://localhost/proy_01/inventario_.php">Materiales</a>
 					</li>
 				</ul>
 			</div>
